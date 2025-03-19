@@ -8,12 +8,12 @@
         "calories": 240,
         "type": "ice-cream",
         "ingredients": ["Chocolate Syrup", "Peppermint Sprinkle", "Vanilla Base"],
-        "image": ""
+        "image": "https://priyansht.github.io/25W-JavaScript-02-Week11/images/chocolate-mint.svg"
     }, {
         "name": "Peach Mango",
         "calories": 285,
         "type": "milkshake-type ice-cream",
         "ingredients": ["Peach Syrup", "Mango Chunks", "Vanilla Base"],
-        "image": ""
+        "image": "https://priyansht.github.io/25W-JavaScript-02-Week11/images/peach-mango.svg"
     }]
 }
