@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>JavaScript Object Notation (JSON) | COMP1073 Client-Side JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="css/normalize.css" rel="stylesheet" />
+	<link href="css/styles.css" rel="stylesheet" />
+	<script src="js/json.js" defer></script>
+</head>
+
+<body>
+	<!-- STEP 1: Build out a HEADER with a title and navigation -->
+	<header>
+		<h1>Understanding JSON (JavaScript Object Notation)</h1>
+		<nav>
+			<ul>
+				<li><a href="#lesson">Lesson Overview</a></li>
+				<li><a href="#examples">Examples</a></li>
+				<li><a href="#resources">Additional Resources</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- STEP 2: SECTION for displaying the JSON lesson content -->
+	<section id="lesson">
+		<h2>Lesson Overview</h2>
+		<p>In this lesson, you will learn about JSON, a lightweight data interchange format that is easy for both humans and machines to read and write.</p>
+	</section>
+
+	<section id="examples">
+		<h2>JSON Examples</h2>
+		<p>Here are a few basic examples of JSON structures:</p>
+		<pre>
+{
+    "name": "John Doe",
+    "age": 30,
+    "isStudent": false
+}
+		</pre>
+	</section>
+
+	<section id="resources">
+		<h2>Additional Resources</h2>
+		<ul>
+			<li><a href="https://www.json.org/json-en.html">Official JSON Website</a></li>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON">MDN JSON Guide</a></li>
+		</ul>
+	</section>
+</body>
+
+</html>
