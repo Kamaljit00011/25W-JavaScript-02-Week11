@@ -148,52 +148,46 @@ for (let i = 0; i < topFlavors.length; i++) {
         
 }
 // STEP 11: Add a 3rd flavour of ice cream to the local JSON file, making use of the /images/strawberry-sprinkle.svg image
- {
-    "companyName": "I-Scream Co.",
-    "headOffice": "New York, USA",
-    "established": "1990",
-    "active": true,
-    "topFlavor": [
-        {
+{
             "name": "Strawberry Sprinkle",
-            "calories": 230,
-            "type": "Ice Cream",
-            "ingredients": "Milk, Sugar, Strawberries, Sprinkles, Cream",
-            "image": "/images/strawberry-sprinkle.svg"
+            "calories": 300,
+            "type": "ice-cream",
+            "ingredients": ["Chocolate Syrup", "Strawberry Chunks", "Vanilla Base", "Sprinkles"],
+            "image": "https://priyansht.github.io/25W-JavaScript-02-Week11/images/strawberry-sprinkle.svg"
         }
     ]
 }
 
 // Lab: Extend the JavaScript application built in class to include two more flavors of ice cream.
  {
-    "companyName": "I-Scream Co.",
-    "headOffice": "New York, USA",
-    "established": "1990",
+    "companyName": "I-Scream Company Inc.",
+    "headOffice": "North Pole",
+    "established": 2025,
     "active": true,
-    "topFlavors": [
+    "topFlavors": [{
+            "name": "Chocolate Mint",
+            "calories": 240,
+            "type": "ice-cream",
+            "ingredients": ["Chocolate Syrup", "Peppermint Sprinkle", "Vanilla Base"],
+            "image": "https://priyansht.github.io/25W-JavaScript-02-Week11/images/chocolate-mint.svg"
+        }, {
+            "name": "Peach Mango",
+            "calories": 285,
+            "type": "milkshake-type ice-cream",
+            "ingredients": ["Peach Syrup", "Mango Chunks", "Vanilla Base"],
+            "image": "https://priyansht.github.io/25W-JavaScript-02-Week11/images/peach-mango.svg"
+        },
         {
             "name": "Strawberry Sprinkle",
-            "calories": 230,
-            "type": "Ice Cream",
-            "ingredients": "Milk, Sugar, Strawberries, Sprinkles, Cream",
-            "image": "/images/strawberry-sprinkle.svg"
-        },
-        {
-            "name": "Chocolate-Mint",
-            "calories": 240,
-            "type": "Ice Cream",
-            "ingredients": "Milk, Sugar, Chocolate, Mint Extract, Cream",
-            "image": "/images/chocolate-mint.svg"
-        },
-        {
-            "name": "Peach-Mango",
-            "calories": 210,
-            "type": "Ice Cream",
-            "ingredients": "Peaches, Mangoes, Sugar, Cream",
-            "image": "/images/peach-mango.svg"
+            "calories": 300,
+            "type": "ice-cream",
+            "ingredients": ["Chocolate Syrup", "Strawberry Chunks", "Vanilla Base", "Sprinkles"],
+            "image": "https://priyansht.github.io/25W-JavaScript-02-Week11/images/strawberry-sprinkle.svg"
         }
     ]
 }
+    
+
 
 // This page inspired by and adapted from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
 
