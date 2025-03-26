@@ -1,13 +1,46 @@
 /* STEP 2: Bind the HEADER and the SECTION elements above to variables */
 const header = document.querySelector("header");
 const section = document.querySelector("section");
+ // Dynamically change content of the header
+header.innerHTML = `
+    <h1>Learning JSON with JavaScript</h1>
+    <p>Explore JSON data manipulation and how it integrates with JavaScript.</p>
+`;
 
+// Dynamically change content of the section
+section.innerHTML = `
+    <h2>What is JSON?</h2>
+    <p>JSON (JavaScript Object Notation) is a lightweight data format often used for data exchange between a server and a web client. It is easy to read and write for humans, and easy for machines to parse and generate.</p>
+    <h3>Example of a JSON Object:</h3>
+    <pre id="json-example"></pre>
+`;
 // STEP 3a: Create the asynchronous function populate()
 async function populate() {
+    {
+        // Example URL to fetch JSON data from (you could replace this with your own API or file)
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        
+        // Wait for the response and parse it as JSON
+        const data = await response.json();
+
+        // Now that the data is fetched, populate the section with this JSON
+        const jsonElement = document.getElementById('json-example');
+
+        // Displaying the JSON data in a readable format
+        jsonElement.textContent = JSON.stringify(data, null, 2); // Pretty format with indentation
+
+    } catch (error) {
+        console.error('Error fetching JSON data:', error);
+        const jsonElement = document.getElementById('json-example');
+        jsonElement.textContent = 'Failed to load JSON data.';
+    }
+}
+
     // Introducing JavaScript Object Notation (JSON): https://json.org/
     // STEP 4a: Create i-scream.json file with companyName, headOffice, established, active, topFlavors(name, calories, type, ingredients, image) */
     // STEP 4b: Store the URL of a JSON file in a variable */
     const url = "https://priyansht.github.io/25W-JavaScript-02-Week11/js/i-scream.json";
+
     // STEP 5: Use the new URL to create a new request object
     const request = new Request(url);
     // STEP 6: Make a network request with the fetch() function, which returns a Response object
@@ -83,6 +116,21 @@ function showTopFlavors(jsonBody) {
     }
 }
 // STEP 11: Add a 3rd flavour of ice cream to the local JSON file, making use of the /images/strawberry-sprinkle.svg image
+ {
+    "companyName": "I-Scream Co.",
+    "headOffice": "New York, USA",
+    "established": "1990",
+    "active": true,
+    "topFlavor": [
+        {
+            "name": "Strawberry Sprinkle",
+            "calories": 230,
+            "type": "Ice Cream",
+            "ingredients": "Milk, Sugar, Strawberries, Sprinkles, Cream",
+            "image": "/images/strawberry-sprinkle.svg"
+        }
+    ]
+}
 
 // Lab: Extend the JavaScript application built in class to include two more flavors of ice cream.
 
