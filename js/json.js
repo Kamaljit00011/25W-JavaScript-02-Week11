@@ -78,42 +78,74 @@ function showTopFlavors(jsonBody) {
     // STEP 10d: Loop through the topFlavors object
     for (let i = 0; i < topFlavors.length; i++) {
         console.log(topFlavors[i]);
-        // STEP 10e: build HTML elements for the content: article, h2, image, p1, p2, list
-        let article = document.createElement("article"); // <article></article>
-        let h2 = document.createElement("h2"); // <h2></h2>
-        let image = document.createElement("img"); // <img>
-        let p1 = document.createElement("p"); // <p></p>
-        let p2 = document.createElement("p"); // <p></p>
-        let list = document.createElement("ul"); // <ul></ul>
-        // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
-        h2.textContent = topFlavors[i].name;
-        p1.textContent = `Calories: ${topFlavors[i].calories}`;
-        p2.textContent = `Type: ${topFlavors[i].type}`;
-        image.setAttribute("src", topFlavors[i].image); // <img src="...">
+        // STEP 10e: Create the HTML elements
+let article = document.createElement("article"); // <article></article>
+let h2 = document.createElement("h2"); // <h2></h2>
+let image = document.createElement("img"); // <img>
+let p1 = document.createElement("p"); // <p></p>
+let p2 = document.createElement("p"); // <p></p>
+let list = document.createElement("ul"); // <ul></ul>
 
-        // STEP 10g: Build a loop for the ingredients array in the JSON
-        let ingredients = topFlavors[i].ingredients;
-        for (let j = 0; j < ingredients.length; j++) {
-            console.log(ingredients[j]);
-            // <ul>
-            //  <li></li>
-            //  <li></li>
-            //  <li></li>
-            // </ul>
-            let listItem = document.createElement("li");
-            listItem.textContent = ingredients[j];
-            list.appendChild(listItem);
-        }
+// STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
+h2.textContent = topFlavors[i].name; // Set the flavor name in h2
+p1.textContent = `Calories: ${topFlavors[i].calories}`; // Set the calories in p1
+p2.textContent = `Type: ${topFlavors[i].type}`; // Set the type of ice cream in p2
 
-        // STEP 10i: Append each complete ARTICLE element to the SECTION element
-        article.appendChild(h2);
-        article.appendChild(p1);
-        article.appendChild(p2);
-        article.appendChild(list);
-        article.appendChild(image);
+// Set the image source (image URL) and alt text based on the JSON
+image.setAttribute("src", topFlavors[i].image); // Set the source of the image (e.g., "image.jpg")
+image.setAttribute("alt", topFlavors[i].name); // Set the alt text for the image (e.g., "chocolate-mint.jpg")
 
-        section.appendChild(article);
+     // Assuming the data is available in the 'topFlavors' array from the fetched JSON
+
+// STEP 10g: Loop through the 'topFlavors' array in the JSON data
+for (let i = 0; i < topFlavors.length; i++) {
+    const flavor = topFlavors[i]; // Get the current flavor object
+
+    // Create the ARTICLE element to hold all content for each flavor
+    const article = document.createElement("article");
+
+    // STEP 10h: Create the elements to hold the flavor information
+    const h2 = document.createElement("h2");
+    h2.textContent = flavor.name; // Set the name of the flavor
+
+    const p1 = document.createElement("p");
+    p1.textContent = `Calories: ${flavor.calories}`; // Display the calories of the flavor
+
+    const p2 = document.createElement("p");
+    p2.textContent = `Ingredients:`;
+
+    // Create the list to hold the ingredients
+    const list = document.createElement("ul");
+
+    // STEP 10g: Loop through the 'ingredients' array and create a list item for each ingredient
+    let ingredients = flavor.ingredients; // Get the ingredients for the current flavor
+    for (let j = 0; j < ingredients.length; j++) {
+        console.log(ingredients[j]); // Log the ingredient to the console
+
+        // Create a list item element
+        const listItem = document.createElement("li");
+        listItem.textContent = ingredients[j]; // Set the ingredient text
+        list.appendChild(listItem); // Append the list item to the list
     }
+
+    // STEP 10h: Create the image element for the flavor
+    const image = document.createElement("img");
+    image.src = flavor.image; // Set the image source from the flavor data
+    image.alt = flavor.name; // Set the alt text to the flavor name
+
+    // STEP 10i: Append each complete ARTICLE element to the SECTION element
+    article.appendChild(h2); // Append the flavor name
+    article.appendChild(p1); // Append the calories
+    article.appendChild(p2); // Append the ingredients label
+    article.appendChild(list); // Append the list of ingredients
+    article.appendChild(image); // Append the image
+
+    // Find the section where the content will be appended
+    const section = document.querySelector("section");
+
+    // Append the complete article to the section
+    section.appendChild(article);
+        
 }
 // STEP 11: Add a 3rd flavour of ice cream to the local JSON file, making use of the /images/strawberry-sprinkle.svg image
  {
