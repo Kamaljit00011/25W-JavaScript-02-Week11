@@ -133,6 +133,35 @@ function showTopFlavors(jsonBody) {
 }
 
 // Lab: Extend the JavaScript application built in class to include two more flavors of ice cream.
+ {
+    "companyName": "I-Scream Co.",
+    "headOffice": "New York, USA",
+    "established": "1990",
+    "active": true,
+    "topFlavors": [
+        {
+            "name": "Strawberry Sprinkle",
+            "calories": 230,
+            "type": "Ice Cream",
+            "ingredients": "Milk, Sugar, Strawberries, Sprinkles, Cream",
+            "image": "/images/strawberry-sprinkle.svg"
+        },
+        {
+            "name": "Chocolate-Mint",
+            "calories": 240,
+            "type": "Ice Cream",
+            "ingredients": "Milk, Sugar, Chocolate, Mint Extract, Cream",
+            "image": "/images/chocolate-mint.svg"
+        },
+        {
+            "name": "Peach-Mango",
+            "calories": 210,
+            "type": "Ice Cream",
+            "ingredients": "Peaches, Mangoes, Sugar, Cream",
+            "image": "/images/peach-mango.svg"
+        }
+    ]
+}
 
 // This page inspired by and adapted from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
 
